@@ -1,0 +1,46 @@
+package kr.android.sencha.carousel;
+
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+public class MainActivity extends ActionBarActivity {
+	
+	WebView wvWeb;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        wvWeb = (webView)findViewById(R.id.wvWeb);
+        wvWeb.getSettings().setJavaScriptEnabled(true);
+        
+        //로컬 데이터를 읽어올 때
+        wvWeb.loadUrl("file://android_asset/www/index.html");
+        
+        wvWeb.setWebViewClient(new WebViewClient(){
+        	
+        	
+        	@Override
+        	public boolean shouldOverrideUrlLoading(webView view, String url, view.loadUrl(url) ){
+        		//링크를 클릭했을 때 이벤트 처리
+            	view.loadUrl(url);
+            	return true;
+        	}
+        });
+
+    }
+    
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+    	if(keyCode==KeyEvent.KEYCODE_BACK && wvWeb.canGoBack()){
+    		wvWeb.goBack();
+    	}else if(){
+    		
+    	}
+    }
+
+
+}

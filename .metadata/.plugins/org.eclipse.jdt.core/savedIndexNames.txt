@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+C:\javanAndroid\workspace_phonegap\.metadata\.plugins\org.eclipse.jdt.core
+4020300835.index
+2576602513.index
+1284074322.index
+4084974887.index
+2749385904.index

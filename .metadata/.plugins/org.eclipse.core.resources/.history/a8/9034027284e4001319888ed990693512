@@ -1,0 +1,31 @@
+package kr.android.sencha.carousel;
+
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+public class MainActivity extends ActionBarActivity {
+	
+	WebView wvWeb;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        wvWeb = (webView)findViewById(R.id.wvWeb);
+        wvWeb.getSettings().setJavaScriptEnabled(true);
+        
+        //로컬 데이터를 읽어올 때
+        wvWeb.loadUrl("file://android_asset/www/index.html");
+        
+        wvWeb.setWebViewClient(new WebViewClient(){
+        	
+        });
+
+       
+    }
+
+
+}
